@@ -1,0 +1,17 @@
+screenshots/
+tool-results/
+agent-ctx/
+.zscripts/
+skills/
+scripts/
+download/
+upload/
+tests/
+examples/
+mini-services/
+content/__pycache__/
+*.log
+worklog.md
+PRODUCT.md
+DESIGN.md
+.vercel
