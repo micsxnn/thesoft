@@ -1,6 +1,7 @@
 "use client";
 
 import { useMemo, useState } from "react";
+import Image from "next/image";
 import Link from "next/link";
 import { Search, X } from "lucide-react";
 import { formatSwissDate } from "@/lib/format";
@@ -10,8 +11,10 @@ export type PostSummary = {
   title: string;
   description: string;
   date: string;
+  category: string;
   tags: string[];
   readingTime: number;
+  coverImage?: string;
 };
 
 export function SearchClient({ posts }: { posts: PostSummary[] }) {
@@ -27,6 +30,7 @@ export function SearchClient({ posts }: { posts: PostSummary[] }) {
       (post) =>
         post.title.toLowerCase().includes(normalized) ||
         post.description.toLowerCase().includes(normalized) ||
+        post.category.toLowerCase().includes(normalized) ||
         post.tags.some((tag) => tag.toLowerCase().includes(normalized))
     );
   }, [posts, normalized]);
@@ -78,27 +82,39 @@ export function SearchClient({ posts }: { posts: PostSummary[] }) {
         <ul className="mt-6 border-t border-border">
           {results.map((post) => (
             <li key={post.slug} className="border-b border-border">
-              <article className="group relative py-7">
-                <div className="flex items-baseline justify-between gap-x-8 gap-y-2 max-sm:flex-col">
-                  <h2 className="text-[1.2rem] font-medium leading-snug tracking-[-0.02em] text-foreground transition-colors duration-200 group-hover:text-[#5ce49e]">
-                    {post.title}
-                  </h2>
-                  <p className="shrink-0 font-mono text-[13px] tabular text-muted-foreground">
-                    {formatSwissDate(post.date)}
-                    <span aria-hidden="true"> · </span>
-                    {post.readingTime} min
+              <article className="group relative flex gap-5 py-7 sm:gap-7">
+                {post.coverImage ? (
+                  <div className="relative order-first h-20 w-32 shrink-0 overflow-hidden rounded-[2px] border border-border bg-[#111111] sm:h-24 sm:w-40">
+                    <Image
+                      src={post.coverImage}
+                      alt=""
+                      fill
+                      sizes="(max-width: 640px) 128px, 160px"
+                      className="object-cover opacity-80 transition-opacity duration-200 group-hover:opacity-100"
+                    />
+                  </div>
+                ) : null}
+
+                <div className="min-w-0 flex-1">
+                  <div className="flex items-baseline justify-between gap-x-8 gap-y-2 max-sm:flex-col">
+                    <h2 className="text-[1.2rem] font-medium leading-snug tracking-[-0.02em] text-foreground text-balance transition-colors duration-200 group-hover:text-[#5ce49e]">
+                      {post.title}
+                    </h2>
+                    <p className="shrink-0 font-mono text-[13px] tabular text-muted-foreground">
+                      {formatSwissDate(post.date)}
+                      <span aria-hidden="true"> · </span>
+                      {post.readingTime} min
+                    </p>
+                  </div>
+
+                  <p className="mt-2 max-w-[62ch] text-[15px] leading-relaxed text-muted-foreground text-pretty">
+                    {post.description}
+                  </p>
+
+                  <p className="mt-3 font-mono text-xs text-[#5ce49e]">
+                    {post.category}
                   </p>
                 </div>
-
-                <p className="mt-2 max-w-[62ch] text-[15px] leading-relaxed text-muted-foreground">
-                  {post.description}
-                </p>
-
-                <p className="mt-3 flex flex-wrap gap-x-4 gap-y-1 font-mono text-xs text-muted-foreground">
-                  {post.tags.map((tag) => (
-                    <span key={tag}>{tag}</span>
-                  ))}
-                </p>
 
                 <Link href={`/posts/${post.slug}`} className="absolute inset-0">
                   <span className="sr-only">Ler: {post.title}</span>

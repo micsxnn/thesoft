@@ -1,10 +1,10 @@
 ---
 title: "Deploy na Vercel: do repositório ao domínio em produção"
-description: "O fluxo completo de deploy na Vercel: importar repositório, entender build previews e produção, variáveis de ambiente, domínios e as armadilhas mais comuns."
 date: "2026-10-18"
+description: "O fluxo completo de deploy na Vercel: importar repositório, entender build previews e produção, variáveis de ambiente, domínios e as armadilhas mais comuns."
+category: "Engenharia"
 tags: ["Deploy", "DevOps"]
 ---
-
 Publicar um site moderno não deveria exigir um dia de configuração de servidor. Com a Vercel, o caminho do repositório ao domínio em produção tem quatro passos — e este guia documenta cada um deles, incluindo os detalhes que causam 90% dos erros de deploy.
 
 ## O que você vai dominar

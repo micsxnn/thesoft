@@ -20,6 +20,12 @@ export function SiteHeader() {
             Posts
           </Link>
           <Link
+            href="/#categorias"
+            className="rounded-[2px] px-2 py-2.5 text-sm text-muted-foreground transition-colors hover:text-foreground"
+          >
+            Categorias
+          </Link>
+          <Link
             href="/busca"
             className="flex items-center gap-1.5 rounded-[2px] px-2 py-2.5 text-sm text-muted-foreground transition-colors hover:text-foreground"
           >

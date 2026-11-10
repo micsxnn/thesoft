@@ -3,7 +3,7 @@ export function SiteFooter() {
     <footer className="mt-auto border-t border-border pb-[env(safe-area-inset-bottom)]">
       <div className="mx-auto flex w-full max-w-6xl flex-col gap-4 px-6 py-10 sm:flex-row sm:items-center sm:justify-between">
         <p className="text-sm text-muted-foreground">
-          thesoft — engenharia de software, direto ao ponto.
+          thesoft — software, Linux, Windows e gaming, direto ao ponto.
         </p>
         <div className="flex items-center gap-6 text-sm">
           <a

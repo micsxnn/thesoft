@@ -197,6 +197,7 @@
   letter-spacing: -0.02em;
   line-height: 1.25;
   color: #fafafa;
+  text-wrap: balance;
 }
 
 .post-content h2 + p,
@@ -211,10 +212,12 @@
   font-weight: 600;
   letter-spacing: -0.015em;
   color: #fafafa;
+  text-wrap: balance;
 }
 
 .post-content p {
   max-width: 72ch;
+  text-wrap: pretty;
 }
 
 .post-content strong {

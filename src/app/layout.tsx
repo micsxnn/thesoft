@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
+import { SITE_DESCRIPTION, SITE_NAME, SITE_URL } from "@/lib/site";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -14,22 +15,22 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-const SITE_URL = "https://thesoft.vercel.app";
-
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: "thesoft — engenharia de software, direto ao ponto",
-    template: "%s — thesoft",
+    default: `${SITE_NAME} — software, Linux, Windows e gaming, direto ao ponto`,
+    template: `%s — ${SITE_NAME}`,
   },
-  description:
-    "Tutoriais de engenharia de software: Next.js, React, TypeScript, Git e deploy. Direto ao ponto, com código que funciona.",
+  description: SITE_DESCRIPTION,
   keywords: [
     "Next.js",
     "React",
     "TypeScript",
     "Git",
     "Deploy",
+    "Linux",
+    "Windows",
+    "gaming",
     "engenharia de software",
     "tutoriais",
     "blog",
@@ -43,21 +44,19 @@ export const metadata: Metadata = {
     type: "website",
     locale: "pt_BR",
     url: SITE_URL,
-    siteName: "thesoft",
-    title: "thesoft — engenharia de software, direto ao ponto",
-    description:
-      "Tutoriais de engenharia de software: Next.js, React, TypeScript, Git e deploy. Direto ao ponto, com código que funciona.",
-    images: [{ url: "/avatar.png", width: 460, height: 460, alt: "thesoft" }],
+    siteName: SITE_NAME,
+    title: `${SITE_NAME} — software, Linux, Windows e gaming, direto ao ponto`,
+    description: SITE_DESCRIPTION,
+    images: [{ url: "/avatar.png", width: 460, height: 460, alt: SITE_NAME }],
   },
   twitter: {
     card: "summary",
-    title: "thesoft — engenharia de software, direto ao ponto",
-    description:
-      "Tutoriais de engenharia de software: Next.js, React, TypeScript, Git e deploy.",
+    title: `${SITE_NAME} — software, Linux, Windows e gaming, direto ao ponto`,
+    description: SITE_DESCRIPTION,
   },
   alternates: {
     types: {
-      "application/rss+xml": [{ url: "/feed.xml", title: "thesoft RSS" }],
+      "application/rss+xml": [{ url: "/feed.xml", title: `${SITE_NAME} RSS` }],
     },
   },
 };

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { getAllPosts, getPostBySlug, tagToSlug } from "@/lib/posts";
@@ -30,6 +31,9 @@ export async function generateMetadata({
       type: "article",
       publishedTime: post.date,
       tags: post.tags,
+      images: post.coverImage
+        ? [{ url: post.coverImage, alt: post.title }]
+        : undefined,
     },
   };
 }
@@ -49,7 +53,7 @@ export default async function PostPage({ params }: PostPageProps) {
             {post.readingTime} min de leitura
           </p>
 
-          <h1 className="hero-rise hero-rise-2 mt-5 max-w-[24ch] text-[clamp(2rem,5.5vw,3.25rem)] font-semibold leading-[1.05] tracking-[-0.035em]">
+          <h1 className="hero-rise hero-rise-2 mt-5 max-w-[24ch] text-[clamp(2rem,5.5vw,3.25rem)] font-semibold leading-[1.05] tracking-[-0.035em] text-balance">
             {post.title}
           </h1>
 
@@ -57,7 +61,15 @@ export default async function PostPage({ params }: PostPageProps) {
             {post.description}
           </p>
 
-          <ul className="hero-rise hero-rise-4 mt-7 flex flex-wrap gap-2">
+          <ul className="hero-rise hero-rise-4 mt-7 flex flex-wrap items-center gap-2">
+            <li>
+              <Link
+                href={`/categoria/${tagToSlug(post.category)}`}
+                className="inline-block rounded-[2px] border border-[#5ce49e]/40 px-2.5 py-1 font-mono text-xs text-[#5ce49e] transition-colors hover:border-[#5ce49e]"
+              >
+                {post.category}
+              </Link>
+            </li>
             {post.tags.map((tag) => (
               <li key={tag}>
                 <Link
@@ -70,6 +82,21 @@ export default async function PostPage({ params }: PostPageProps) {
             ))}
           </ul>
         </header>
+
+        {post.coverImage ? (
+          <figure className="mt-12">
+            <div className="relative aspect-[16/9] w-full overflow-hidden rounded-[2px] border border-border bg-[#111111]">
+              <Image
+                src={post.coverImage}
+                alt=""
+                fill
+                priority
+                sizes="(max-width: 768px) 100vw, 768px"
+                className="object-cover"
+              />
+            </div>
+          </figure>
+        ) : null}
 
         <hr className="hero-rise hero-rise-4 my-12 border-border" />
 

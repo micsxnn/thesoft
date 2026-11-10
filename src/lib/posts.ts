@@ -9,9 +9,12 @@ export type Post = {
   title: string;
   description: string;
   date: string;
+  category: string;
   tags: string[];
   content: string;
   readingTime: number;
+  coverImage?: string;
+  featured: boolean;
 };
 
 export type TagWithCount = {
@@ -50,6 +53,15 @@ function parsePostFile(fileName: string): Post | null {
   const description = typeof data.description === "string" ? data.description : "";
   const date = typeof data.date === "string" ? data.date : "";
   const tags = asStringArray(data.tags);
+  const category =
+    typeof data.category === "string" && data.category.length > 0
+      ? data.category
+      : "Outros";
+  const coverImage =
+    typeof data.coverImage === "string" && data.coverImage.length > 0
+      ? data.coverImage
+      : undefined;
+  const featured = data.featured === true;
 
   if (!title || !date) return null;
 
@@ -58,9 +70,12 @@ function parsePostFile(fileName: string): Post | null {
     title,
     description,
     date,
+    category,
     tags,
     content,
     readingTime: readingTimeOf(content),
+    coverImage,
+    featured,
   };
 }
 
@@ -91,6 +106,26 @@ export function getAllTags(): TagWithCount[] {
   return Array.from(counts.entries())
     .map(([tag, count]) => ({ tag, count }))
     .sort((a, b) => b.count - a.count || a.tag.localeCompare(b.tag));
+}
+
+/** Categorias — o eixo principal de navegação. As tags são o eixo secundário. */
+export function getAllCategories(): TagWithCount[] {
+  const counts = new Map<string, number>();
+
+  for (const post of getAllPosts()) {
+    counts.set(post.category, (counts.get(post.category) ?? 0) + 1);
+  }
+
+  return Array.from(counts.entries())
+    .map(([category, count]) => ({ tag: category, count }))
+    .sort((a, b) => b.count - a.count || a.tag.localeCompare(b.tag));
+}
+
+export function getPostsByCategory(category: string): Post[] {
+  const normalized = category.toLowerCase();
+  return getAllPosts().filter(
+    (post) => post.category.toLowerCase() === normalized
+  );
 }
 
 export function getPostsByTag(tag: string): Post[] {

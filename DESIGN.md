@@ -24,11 +24,22 @@ Suíço minimalista em polaridade escura: tipografia é a protagonista, o espaç
 - Proibido: kickers/eyebrows, gradient text, border-left colorida, seções numeradas decorativas, glass decorativo
 - Sem cards flutuantes: elevação por hairline, nunca drop-shadow
 - Botões: retos (2px), texto com estado hover preciso (underline offset, mudança de cor)
+- Capa do post: imagem real em 16/9, hairline no contorno, sem sombra, sem padding — o post abre com a foto, não com um placeholder
+- Thumbnail na lista: 128×80 (mobile) / 160×96 (desktop), alinhada à esquerda do texto, opacidade 80% → 100% no hover
+
+## Hierarquia de navegação
+- **Categoria** é o eixo principal: aparece na lista (mono, acento), na página do post (chip com borda de acento) e tem rota própria em `/categoria/[slug]`
+- **Tags** são o eixo secundário: ficam na página do post e em `/tag/[slug]`, mas não poluem a lista — a lista mostra categoria, não uma parede de tags
+- Meta (data, tempo de leitura) sempre em mono tabular
 
 ## Motion
 - Um momento autoral: reveal do hero (fade + rise com stagger curto, ease-out exponencial)
 - Hover nos títulos da lista: transição de cor para acento + deslocamento sutil
 - Nada de animações espalhadas por seção
+
+## Tipografia em fluxo
+- Títulos multi-linha: `text-wrap: balance` (evita a última linha com uma palavra solta)
+- Corpo de texto: `text-wrap: pretty` (evita o buraco no fim do parágrafo)
 
 ## Superfícies do browser (obrigatório)
 - Seleção de texto: bg acento `#5CE49E`, fg `#0A0A0A`

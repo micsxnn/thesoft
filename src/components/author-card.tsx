@@ -19,8 +19,8 @@ export function AuthorCard() {
       <div className="flex-1">
         <p className="font-medium text-foreground">micaelsan</p>
         <p className="mt-1.5 max-w-[58ch] text-[15px] leading-relaxed text-muted-foreground">
-          Desenvolvedor autônomo. Escreve sobre engenharia de software, ferramentas
-          e prática de desenvolvimento — direto ao ponto, com código que funciona.
+          Desenvolvedor autônomo. Escreve sobre engenharia de software, Linux,
+          Windows e gaming — direto ao ponto, com passo a passo que funciona.
         </p>
       </div>
 

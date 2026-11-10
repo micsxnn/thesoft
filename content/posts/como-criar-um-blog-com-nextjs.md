@@ -1,10 +1,10 @@
 ---
 title: "Como criar um blog com Next.js: do setup ao deploy"
-description: "Guia direto para montar um blog técnico com Next.js App Router: estrutura de pastas, leitura de Markdown com frontmatter, geração de rotas estáticas e SEO técnico."
 date: "2026-10-22"
+description: "Guia direto para montar um blog técnico com Next.js App Router: estrutura de pastas, leitura de Markdown com frontmatter, geração de rotas estáticas e SEO técnico."
+category: "Engenharia"
 tags: ["Next.js", "React", "Deploy"]
 ---
-
 Um blog técnico precisa de três coisas: rotas rápidas, escrita em Markdown e bom SEO. O Next.js com App Router entrega as três sem dependências exóticas. Este guia mostra cada passo, do `create-next-app` ao primeiro post publicado — com o código exato que você precisa em cada etapa.
 
 ## O que você vai construir

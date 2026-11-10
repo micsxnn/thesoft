@@ -1,10 +1,10 @@
 ---
 title: "TypeScript na prática: os tipos que resolvem bugs antes do deploy"
-description: "Guia prático dos recursos de TypeScript que geram valor real: inferência, narrowing, generics utilitários, narrowing de API responses e tipagem de dados externos."
 date: "2026-10-09"
+description: "Guia prático dos recursos de TypeScript que geram valor real: inferência, narrowing, generics utilitários, narrowing de API responses e tipagem de dados externos."
+category: "Engenharia"
 tags: ["TypeScript", "JavaScript"]
 ---
-
 TypeScript não é burocracia extra — é o compilador apontando o bug enquanto você escreve, em vez do usuário apontar depois do deploy. Este guia cobre os recursos que geram valor no dia a dia real: inferência, narrowing, utilitários nativos e a tipagem honesta de dados que vêm de fora.
 
 ## O que muda na prática

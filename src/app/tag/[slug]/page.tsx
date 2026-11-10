@@ -37,7 +37,7 @@ export default async function TagPage({ params }: TagPageProps) {
         <p className="font-mono text-[13px] text-muted-foreground">
           {posts.length} {posts.length === 1 ? "post" : "posts"}
         </p>
-        <h1 className="mt-3 text-[clamp(2rem,5vw,3rem)] font-semibold leading-[1.05] tracking-[-0.035em]">
+        <h1 className="mt-3 text-[clamp(2rem,5vw,3rem)] font-semibold leading-[1.05] tracking-[-0.035em] text-balance">
           Posts sobre{" "}
           <span className="text-[#5ce49e]">{tag}</span>
         </h1>

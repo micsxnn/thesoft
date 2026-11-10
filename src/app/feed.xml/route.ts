@@ -1,8 +1,7 @@
 import { getAllPosts } from "@/lib/posts";
+import { SITE_DESCRIPTION, SITE_NAME, SITE_URL } from "@/lib/site";
 
 export const dynamic = "force-static";
-
-const SITE_URL = "https://thesoft.vercel.app";
 
 function escapeXml(value: string): string {
   return value
@@ -29,6 +28,7 @@ export async function GET() {
       <guid isPermaLink="true">${link}</guid>
       <description>${escapeXml(post.description)}</description>
       <pubDate>${new Date(post.date).toUTCString()}</pubDate>
+      ${post.coverImage ? `<enclosure url="${SITE_URL}${post.coverImage}" type="image/jpeg" />` : ""}
       ${categories}
     </item>`;
     })
@@ -37,9 +37,9 @@ export async function GET() {
   const xml = `<?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>thesoft</title>
+    <title>${SITE_NAME}</title>
     <link>${SITE_URL}</link>
-    <description>Tutoriais de engenharia de software: Next.js, React, TypeScript, Git e deploy. Direto ao ponto, com código que funciona.</description>
+    <description>${escapeXml(SITE_DESCRIPTION)}</description>
     <language>pt-BR</language>
     <atom:link href="${SITE_URL}/feed.xml" rel="self" type="application/rss+xml"/>
 ${items}

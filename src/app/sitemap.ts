@@ -1,7 +1,11 @@
 import type { MetadataRoute } from "next";
-import { getAllPosts, getAllTags, tagToSlug } from "@/lib/posts";
-
-const SITE_URL = "https://thesoft.vercel.app";
+import {
+  getAllPosts,
+  getAllTags,
+  getAllCategories,
+  tagToSlug,
+} from "@/lib/posts";
+import { SITE_URL } from "@/lib/site";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const posts = getAllPosts().map((post) => ({
@@ -11,11 +15,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.8,
   }));
 
+  const categories = getAllCategories().map(({ tag }) => ({
+    url: `${SITE_URL}/categoria/${tagToSlug(tag)}`,
+    lastModified: new Date(),
+    changeFrequency: "monthly" as const,
+    priority: 0.6,
+  }));
+
   const tags = getAllTags().map(({ tag }) => ({
     url: `${SITE_URL}/tag/${tagToSlug(tag)}`,
     lastModified: new Date(),
     changeFrequency: "monthly" as const,
-    priority: 0.5,
+    priority: 0.4,
   }));
 
   return [
@@ -31,6 +42,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "monthly",
       priority: 0.4,
     },
+    ...categories,
     ...posts,
     ...tags,
   ];

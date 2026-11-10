@@ -1,11 +1,11 @@
 import Image from "next/image";
 import Link from "next/link";
-import { getAllPosts, getAllTags, tagToSlug } from "@/lib/posts";
+import { getAllPosts, getAllCategories, tagToSlug } from "@/lib/posts";
 import { PostList } from "@/components/post-list";
 
 export default function Home() {
   const posts = getAllPosts();
-  const tags = getAllTags();
+  const categories = getAllCategories();
 
   return (
     <div className="mx-auto w-full max-w-4xl px-6">
@@ -37,8 +37,8 @@ export default function Home() {
 
         <p className="hero-rise hero-rise-3 mt-7 max-w-[54ch] text-lg leading-relaxed text-muted-foreground">
           Desenvolvedor autônomo. Aqui você encontra tutoriais de engenharia de
-          software — Next.js, React, TypeScript, Git e deploy — direto ao ponto,
-          com código que funciona.
+          software, Linux, Windows e gaming — direto ao ponto, com passo a passo
+          que funciona.
         </p>
       </section>
 
@@ -56,17 +56,20 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Temas */}
-      <section className="pb-24" aria-labelledby="temas-title">
-        <h2 id="temas-title" className="text-2xl font-semibold tracking-[-0.025em]">
-          Temas
+      {/* Categorias */}
+      <section id="categorias" className="scroll-mt-24 pb-24" aria-labelledby="temas-title">
+        <h2
+          id="temas-title"
+          className="text-2xl font-semibold tracking-[-0.025em]"
+        >
+          Categorias
         </h2>
 
         <ul className="mt-8 flex flex-wrap gap-x-3 gap-y-3">
-          {tags.map(({ tag, count }) => (
+          {categories.map(({ tag, count }) => (
             <li key={tag}>
               <Link
-                href={`/tag/${tagToSlug(tag)}`}
+                href={`/categoria/${tagToSlug(tag)}`}
                 className="inline-flex items-baseline gap-1.5 rounded-[2px] border border-border px-3.5 py-2 text-sm text-muted-foreground transition-colors hover:border-[#5ce49e]/50 hover:text-[#5ce49e]"
               >
                 {tag}

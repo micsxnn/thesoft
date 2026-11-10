@@ -1,10 +1,10 @@
 ---
 title: "Git essencial: os comandos que você realmente usa no dia a dia"
-description: "Referência prática dos comandos Git que resolvem o trabalho real: fluxo diário de commits, branches, correção de erros, stash, rebase e as saídas de emergência."
 date: "2026-10-14"
+description: "Referência prática dos comandos Git que resolvem o trabalho real: fluxo diário de commits, branches, correção de erros, stash, rebase e as saídas de emergência."
+category: "Engenharia"
 tags: ["Git", "Ferramentas"]
 ---
-
 A maioria dos tutoriais de Git ensina 40 comandos. Na prática, o trabalho real gira em torno de uma dúzia — e de três ou quatro manobras de resgate que salvam o dia. Este guia organiza exatamente isso: o fluxo diário, as situações que aparecem toda semana e a saída certa para cada uma.
 
 ## O fluxo diário, completo

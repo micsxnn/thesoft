@@ -13,14 +13,16 @@ export default function SearchPage() {
     title: post.title,
     description: post.description,
     date: post.date,
+    category: post.category,
     tags: post.tags,
     readingTime: post.readingTime,
+    coverImage: post.coverImage,
   }));
 
   return (
     <div className="mx-auto w-full max-w-4xl px-6">
       <header className="pb-12 pt-16 sm:pt-20">
-        <h1 className="text-[clamp(2rem,5vw,3rem)] font-semibold leading-[1.05] tracking-[-0.035em]">
+        <h1 className="text-[clamp(2rem,5vw,3rem)] font-semibold leading-[1.05] tracking-[-0.035em] text-balance">
           Busca
         </h1>
         <p className="mt-4 max-w-[54ch] text-lg leading-relaxed text-muted-foreground">

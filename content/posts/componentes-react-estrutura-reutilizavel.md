@@ -1,10 +1,10 @@
 ---
 title: "Componentes React: como estruturar UI reutilizável de verdade"
-description: "Os critérios práticos de componentização React: quando extrair, composição vs configuração, props que escalam, server vs client components e os erros que geram rework."
 date: "2026-10-05"
+description: "Os critérios práticos de componentização React: quando extrair, composição vs configuração, props que escalam, server vs client components e os erros que geram rework."
+category: "Engenharia"
 tags: ["React", "Front-end"]
 ---
-
 Componentizar não é dividir a tela em muitos arquivos — é dividir nos pontos certos. Um componente mal cortado gera props infinitas e rework; um bem cortado some do seu campo de preocupação. Este guia apresenta os critérios que decidem cada corte, com os padrões que escalam de um protótipo a uma base grande.
 
 ## Os critérios, na ordem em que devem ser aplicados
