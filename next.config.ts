@@ -1,7 +1,10 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  output: "standalone",
+  // `standalone` só faz sentido fora da Vercel (preview local/sandbox).
+  // Na Vercel o runtime usa o output padrão dela — forçar standalone aqui
+  // quebra o rastreamento de assets e o funciona das rotas.
+  output: process.env.VERCEL ? undefined : "standalone",
   /* config options here */
   typescript: {
     ignoreBuildErrors: true,
