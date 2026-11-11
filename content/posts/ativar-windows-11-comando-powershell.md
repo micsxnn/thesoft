@@ -115,7 +115,7 @@ O projeto **Microsoft Activation Scripts** é open source, hospedado no GitHub c
 
 Pontos importantes:
 
-- O repositório no GitHub: github.com/massgravel/Microsoft-Activation-Scripts
+- O repositório no GitHub: [github.com/massgravel/Microsoft-Activation-Scripts](https://github.com/massgravel/Microsoft-Activation-Scripts)
 - O código é revisado pela comunidade
 - Não modifica arquivos do sistema além do necessário
 - Pode ser completamente revertido se necessário
