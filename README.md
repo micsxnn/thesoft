@@ -2,7 +2,7 @@
 
 Blog de tecnologia do **micaelsan** — tutoriais de engenharia de software, Linux, Windows e gaming. Direto ao ponto, com passo a passo que funciona.
 
-**Publicado em:** https://thesoft-phi.vercel.app
+**Publicado em:** https://thesoft.vercel.app
 
 ## Stack
 

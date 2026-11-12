@@ -3,11 +3,12 @@
 /**
  * Domínio canônico do blog.
  *
- * `thesoft.vercel.app` não resolve mais (404); o deployment que serve
- * `micsxnn/thesoft` é `thesoft-phi.vercel.app`. O valor precisa ser trocado
- * aqui — e só aqui — quando o domínio definitivo for definido.
+ * `thesoft.vercel.app` é o endereço principal e único em produção — o
+ * deployment que serve `micsxnn/thesoft` é o projeto `thesoft` na conta
+ * `sanpedromicael-8758`. O valor precisa ser trocado aqui — e só aqui —
+ * quando o domínio definitivo for definido.
  */
-export const SITE_URL = "https://thesoft-phi.vercel.app";
+export const SITE_URL = "https://thesoft.vercel.app";
 
 export const SITE_NAME = "thesoft";
 

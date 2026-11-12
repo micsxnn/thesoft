@@ -1,7 +1,7 @@
 # PRODUCT.md — thesoft
 
 ## O que é
-Blog pessoal de tecnologia do autor **micaelsan** (GitHub: micsxnn), publicado em **thesoft-phi.vercel.app**. O blog publica tutoriais sobre desenvolvimento de software, Linux, Windows, segurança e gaming — tudo que o autor usa de verdade no dia a dia.
+Blog pessoal de tecnologia do autor **micaelsan** (GitHub: micsxnn), publicado em **thesoft.vercel.app**. O blog publica tutoriais sobre desenvolvimento de software, Linux, Windows, segurança e gaming — tudo que o autor usa de verdade no dia a dia.
 
 ## Verdade do produto
 - Nome do blog: **thesoft**
@@ -10,7 +10,7 @@ Blog pessoal de tecnologia do autor **micaelsan** (GitHub: micsxnn), publicado e
 - Avatar do autor: foto do perfil do GitHub (`/avatar.png`, 460x460)
 - Idioma do conteúdo: português (pt-BR)
 - Tom do conteúdo: direto e auto-explicativo. Tutoriais que dizem o que ensinam, mostram passo a passo e terminam com um próximo passo concreto.
-- Domínio: thesoft-phi.vercel.app
+- Domínio: thesoft.vercel.app
 
 ## Modo da superfície
 **Read** — o visitante quer entender algo. Estrutura para compreensão primeiro; a experiência de leitura é o produto.
